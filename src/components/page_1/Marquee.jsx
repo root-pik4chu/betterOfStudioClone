@@ -18,15 +18,7 @@ const Marquee = () => {
 
   useEffect(() => {
 
-    const handleResize = () => {
-      const isDesktop = window.innerWidth > 200;
-      if (isDesktop) {
-        window.location.reload(); // Refresh the page when resizing to desktop
-      }
-    };
-
-    // Add resize event listener
-    window.addEventListener('resize', handleResize);
+    
 
 
 
@@ -49,7 +41,7 @@ const Marquee = () => {
         });
       });
     }
-    return () => window.removeEventListener('resize', handleResize);
+    
   }, []);
 
   useGSAP(()=>{
