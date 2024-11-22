@@ -2,13 +2,13 @@ import { useState } from "react";
 
 import "./App.css";
 
-import PageTwo from "./componants/PageTwo";
+import PageTwo from "./components/PageTwo";
 import LocomotiveScroll from "locomotive-scroll";
-import PageOne from "./componants/page_1/PageOne";
-import PageThree from "./componants/Page3/PageThree";
-import OriginalDragSystemWithInfo from "./componants/OriginalDragSystemWithInfo";
-import Page4Image from "./componants/Page4Image";
-import PageFiveWrapper from "./componants/page5/PageFiveWrapper";
+import PageOne from "./components/page_1/PageOne";
+import PageThree from "./components/Page3/PageThree";
+import OriginalDragSystemWithInfo from "./components/OriginalDragSystemWithInfo";
+import Page4Image from "./components/Page4Image";
+import PageFiveWrapper from "./components/page5/PageFiveWrapper";
 
 
 
