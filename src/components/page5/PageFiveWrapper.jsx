@@ -1,7 +1,7 @@
 
 
 import React from 'react'
-import PageFive from './pageFive'
+import PageFive from './PageFive'
 
 const PageFiveWrapper = () => {
   return (
