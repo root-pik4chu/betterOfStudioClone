@@ -5,18 +5,11 @@ import "./App.css";
 import PageTwo from "./componants/PageTwo";
 import LocomotiveScroll from "locomotive-scroll";
 import PageOne from "./componants/page_1/PageOne";
-import ResponsiveGrid from "./componants/ResponsiveGrid";
-import TextImageSection from "./componants/CopyPasteComponants/TextImageSection";
-import DropDown from "./componants/DropDown";
-import Accordion from "./componants/Accourdian";
 import PageThree from "./componants/Page3/PageThree";
-import DraggableList from "./componants/DraggableList ";
 import OriginalDragSystemWithInfo from "./componants/OriginalDragSystemWithInfo";
 import Page4Image from "./componants/Page4Image";
-import PageFive from "./componants/page5/pageFive";
 import PageFiveWrapper from "./componants/page5/PageFiveWrapper";
-import NewNavBarCompo from "./componants/NewNavBarCompo";
-import Experiment from "./componants/Experiment";
+
 
 
 function App() {

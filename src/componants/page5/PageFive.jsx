@@ -68,7 +68,7 @@ const PageFive = () => {
 
         {data.map((item, index) => {
           return (
-            <div className="col-span-1 row-span-1 flex items-start justify-start sm:p-[1vw] flex-col sm:gap-[2vw] gap-[5vw] sm:pt-[5vw] p-[3vw]">
+            <div key={index} className="col-span-1 row-span-1 flex items-start justify-start sm:p-[1vw] flex-col sm:gap-[2vw] gap-[5vw] sm:pt-[5vw] p-[3vw]">
               <div className="number sm:text-[1.5vw] text-[5vw]">(0{index + 1})</div>
               <div className="line w-full h-[1px] bg-zinc-400"></div>
               <div className="text w-full sm:h-[30vh] sm:text-[1.5vw] text-[5vw]">

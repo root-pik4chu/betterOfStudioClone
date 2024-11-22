@@ -32,7 +32,7 @@ const NayaWalaPageThree = ({ items }) => {
             </div>
             {items.map((item, index) => {
               return (
-                <div className="flex flex-col">
+                <div key={index} className="flex flex-col">
                   <div className="w-full border-b-[1px] border-zinc-700 mb-[5vw] sm:mb-0">
                     <div
                       className="flex w-full justify-between  text-[5.2vw] sm:text-[1.2vw] py-[5vw] sm:py-[2vw]"
@@ -54,7 +54,7 @@ const NayaWalaPageThree = ({ items }) => {
                         <div className="  flex gap-[2vw] mt-[5vw] sm:mt-[2vw]">
                           {item.buttons.map((button, i) => {
                             return (
-                              <div className="w-fit p-[1.2vw] sm:p-[.5vw] sm:text-[1.2vw] bg-zinc-200 rounded-sm text-zinc-900 mb-[4vw]">
+                              <div  className="w-fit p-[1.2vw] sm:p-[.5vw] sm:text-[1.2vw] bg-zinc-200 rounded-sm text-zinc-900 mb-[4vw]">
                                 {button}
                               </div>
                             );
