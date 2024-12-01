@@ -1,10 +1,10 @@
 import {React , useRef , useEffect}from "react";
-import { motion } from "framer-motion";
+import { backOut, easeInOut, motion } from "framer-motion";
 
 import {gsap} from "gsap";
 import {useGSAP} from "@gsap/react"
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
+// import { Power4 } from "gsap-trial/src/all";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -16,100 +16,39 @@ const Marquee = () => {
   const data4 = useRef(null);
 
 
-  useEffect(() => {
-
-    
-
-
-
-    if (window.innerWidth > 768) {
-      const animations = [
-        { target: data1.current, props: { fontSize: "40vw" } },
-        { target: data2.current, props: { fontSize: "40vw" } },
-        { target: data3.current, props: { width: "37vw" } },
-        { target: data4.current, props: { width: "37vw" } },
-      ];
+  // useEffect(() => {
+  //   if (window.innerWidth > 768) {
+  //     const animations = [
+  //       { target: data1.current, props: { fontSize: "40vw" } },
+  //       { target: data2.current, props: { fontSize: "40vw" } },
+  //       { target: data3.current, props: { width: "37vw" } },
+  //       { target: data4.current, props: { width: "37vw" } },
+  //     ];
   
-      animations.forEach(({ target, props }) => {
-        gsap.to(target, {
-          ...props,
-          scrollTrigger: {
-            start: "6% 70%",
-            end: "8% 60%",
-            scrub: 2,
-          },
-        });
-      });
-    }
+  //     animations.forEach(({ target, props }) => {
+  //       gsap.to(target, {
+  //         ...props,
+  //         scrollTrigger: {
+  //           start: "6% 70%",
+  //           end: "8% 60%",
+  //           scrub: 2,
+  //           // markers:true,
+  //         },
+  //       });
+  //     });
+  //   }
     
-  }, []);
-
-  useGSAP(()=>{
-
-    // const tl = gsap.timeline({
-    //   ScrollTrigger:{
-    //     trigger:data.current,
-    //     start:"10% 80%",
-    //     end:"80%280%",
-    //     scrub:2,
-    //     markers:true
-    //   }
-    // });
-    
-    // gsap.to(
-    //   data1.current,{
-    //      fontSize:"40vw",
-    //     scrollTrigger:{
-    //       start:"6% 70%",
-    //       end:"8% 10%",
-          
-    //       scrub:2,
-    //     }
-        
-    //   }
-    // )
-    // gsap.to(
-    //   data2.current,{
-    //      fontSize:"40vw",
-    //     scrollTrigger:{
-    //       start:"6% 70%",
-    //       end:"8% 10%",
-      
-    //       scrub:2,
-    //     }
-        
-    //   }
-    // )
-    // gsap.to(
-    //   data3.current,{
-    //     width:"37vw",
-    //     scrollTrigger:{
-    //       start:"6% 70%",
-    //       end:"8% 10%",
-         
-    //       scrub:2,
-    //     }
-        
-    //   }
-    // )
-    // gsap.to(
-    //   data4.current,{
-    //      width:"37vw",
-    //     scrollTrigger:{
-    //       start:"6% 70%",
-    //       end:"8% 10%",
-         
-    //       scrub:2,
-    //     }
-        
-    //   }
-    // )
-    
-  })
+  // }, []);
 
   return (
-    <div className=" text-whitek flex  font-['ff']  leading-none -my-10" 
+    <div className=" text-whitek   font-['ff']  leading-none -my-10 overflow-hidden" 
     >
+      <motion.div 
+      initial={{y:350}}
+      animate={{y:0}}
+      transition={{duration:.9 , ease:[.5,0,.66,.12] }}
+      className=" flex">
+
       <motion.div
         className="flex flex-shrink-0"
         innitial={{x:0}}
@@ -145,7 +84,7 @@ const Marquee = () => {
       >
        
         <div className="marqueeSection flex items-center justify-center flex-shrink-0 w-fit">
-          <div ref={data2} className="leading-none text-[60vw] sm:text-[30vw]">SUBSCRIBE</div>
+          <div ref={data2} className="leading-none text-[60vw] sm:text-[30vw]"><p><span>SUBSCRIBE</span></p></div>
 
             <img 
             ref={data4}
@@ -155,6 +94,7 @@ const Marquee = () => {
             />
    
         </div>
+      </motion.div>
       </motion.div>
     </div>
   );
