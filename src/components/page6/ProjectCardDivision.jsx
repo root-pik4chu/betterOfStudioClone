@@ -10,7 +10,7 @@ const ProjectCardDivision = () => {
       {/* card */}
       <AnimatePresence>
       <motion.div className="w-full grid grid-cols-3 gap-[1vw] gap-y-[3vw] pb-[10vh]"
-         initial={{y:"10%" , opacity:0}}
+         initial={{y:"5%" , opacity:0}}
          animate={{y:"0%" , opacity:1}}
          exit={{y:"10%" , opacity:0}}
          transition={{duration:1.5 , type:"spring"}}

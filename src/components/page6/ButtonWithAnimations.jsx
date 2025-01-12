@@ -59,7 +59,7 @@ const SwitchDivisions = ({trueOrFalse}) => {
                   initial={{ y:"0%"  , opacity:1 }}
                   animate={{ y: clicked ? "100%" : "0" , opacity: clicked ? 0 :1}}
                   // exit={{ y:clicked ? "-100%" : "100%"}}
-                  transition={{ duration: 1.2 , ease:"backInOut" , delay:index *0.03}}
+                  transition={{ duration: 1.2 , type:"spring" , delay:index *0.03}}
                   
                   className="inline-block"
                 >
@@ -84,10 +84,10 @@ const SwitchDivisions = ({trueOrFalse}) => {
             
                 <motion.span
                 key={{clicked}}
-                  initial={{ y:"-100%" , opacity:1}}
-                  animate={{ y: clicked ? "0%" : "-100%" , opacity: clicked ? 1 :0}}
+                  initial={{ y:"100%" , opacity:1}}
+                  animate={{ y: clicked ? "0%" : "100%" , opacity: clicked ? 1 :0}}
                   // exit={{ y:clicked ? "-100%" : "100%"}}
-                  transition={{ duration: 1.2 , ease:"backInOut" , delay:index *0.03}}
+                  transition={{ duration: 1.2 ,  type:"spring" , delay:index *0.03}}
                   
                   className="inline-block "
                 >
