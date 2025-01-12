@@ -1,13 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ButtonWithAnimations from './ButtonWithAnimations'
 import SwitchDivisions from './SwitchDivisions'
 import SubscriptionCardsDiv from './SubscriptionCardsDiv'
 import KyuBhai from './KyuBhai'
+import ProjectCardDivision from './ProjectCardDivision'
 
 
 const PageSix = () => {
 
   // handle click on click 
+  const [child , setChild ] = useState("");
+
+  const handleChild = (data)=>{
+    setChild(data)
+  }
+  console.log(child+"i am from child's click");
+  
 
   return (
     <div>
@@ -22,8 +30,15 @@ const PageSix = () => {
         </div>
         
         <div className="w-full h-auto px-10 ">
-        <ButtonWithAnimations />
-        <SubscriptionCardsDiv />
+        <ButtonWithAnimations trueOrFalse={handleChild} />
+        {/* {console.log(on_Change_Button_Animation)} */}
+
+        {
+          (child) ? <ProjectCardDivision /> :  <SubscriptionCardsDiv />
+
+          
+        }
+
         {/* <KyuBhai /> */}
 
         

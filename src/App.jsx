@@ -35,7 +35,7 @@ function App() {
 
         {/* <LocomotiveScrollWrapper> */}
 
-          <PageOne />
+          {/* <PageOne />
 
           <PageTwo />
           <PageThree />
@@ -43,7 +43,7 @@ function App() {
           <OriginalDragSystemWithInfo />
 
           <Page4Image /> 
-          <PageFiveWrapper />
+          <PageFiveWrapper /> */}
 
 
           <PageSixWrapper />

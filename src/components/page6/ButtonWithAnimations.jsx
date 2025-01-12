@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { motion , AnimatePresence } from "framer-motion";
 
-const SwitchDivisions = () => {
+const SwitchDivisions = ({trueOrFalse}) => {
   const [clicked, setClicked] = useState(false); // Track the state of the button
 
   const handleClick = () => {
     setClicked(!clicked); // Toggle the button state on click
+    trueOrFalse(!clicked);
   };  
 
   const data = [
