@@ -45,7 +45,6 @@ function App() {
           <Page4Image /> 
           <PageFiveWrapper />
 
-
           <PageSixWrapper />
           
           

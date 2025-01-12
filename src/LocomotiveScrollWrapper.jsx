@@ -9,8 +9,8 @@ const LocomotiveScrollWrapper = ({ children }) => {
     const scroll = new LocomotiveScroll({
       el: scrollRef.current, // Reference to the container
       smooth: true,
-      lerp: 0.01, // Adjust for smoothness; lower values = slower
-      multiplier: 0.9, // Slow down the scrolling speed
+      lerp: 0.07, // Adjust for smoothness; lower values = slower
+      multiplier: 0.5, // Slow down the scrolling speed
     });
 
     return () => {
