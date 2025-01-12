@@ -41,59 +41,77 @@ const ResponsiveGrid = () => {
       {/* PC View */}
       <div className="hidden sm:flex justify-between items-end p-4 text-xl text-white w-full h-[40vh] ">
         <div className="w-[20vw] h-[20vh] flex flex-col justify-between">
-          
           <div className="">
-          {
-            ["Pick a plan, submit a job request, and your", "project will kickoff within 24 hours"].map((item,index)=>
-              {return(
-                  <p className="overflow-hidden">
-                  <motion.span 
-                  initial={{ y:"100%"}}
-                  animate={{ y:0}}
-                  transition={{ease:Power4.easeInOut,duration:2 , delay:index*.2}}
-                  className="inline-block origin-left">
-                    {item}
-                  </motion.span>
-                </p>
-              ) })
-            
-          }
-          </div>
-          <div className="first_para flex justify-between w-full p-2 border-b-2">
             {
-              ["Explore Plans"].map((item,index)=>
-                {return(
-                    <p className="overflow-hidden">
-                    <motion.span 
-                    initial={{ y:"100%"}}
-                    animate={{ y:0}}
-                    transition={{ease:Power4.easeInOut,duration:2 , delay:index*.2}}
-                    className="inline-block origin-left">
+              [
+                "Pick a plan, submit a job request, and your",
+                "project will kickoff within 24 hours",
+              ].map((item, index) => {
+                return (
+                  <p className="overflow-hidden">
+                    <motion.span
+                      initial={{ y: "100%" }}
+                      animate={{ y: 0 }}
+                      transition={{
+                        ease: Power4.easeInOut,
+                        duration: 2,
+                        delay: index * 0.2,
+                      }}
+                      className="inline-block origin-left"
+                    >
                       {item}
                     </motion.span>
                   </p>
-                ) })
+                );
+              })
             }
+          </div>
+          <div className="first_para flex justify-between w-full p-2 border-b-2">
+            {["Explore Plans"].map((item, index) => {
+              return (
+                <p className="overflow-hidden">
+                  <motion.span
+                    initial={{ y: "100%" }}
+                    animate={{ y: 0 }}
+                    transition={{
+                      ease: Power4.easeInOut,
+                      duration: 2,
+                      delay: index * 0.2,
+                    }}
+                    className="inline-block origin-left"
+                  >
+                    {item}
+                  </motion.span>
+                </p>
+              );
+            })}
             <div className="">icon</div>
           </div>
         </div>
         <div className="biger_one h-[20vh] w-[55vw]  text-[3.2vw] flex flex-col leading-none">
-          
           <div className="one">
-            {
-              ["Premium quality creative at lean rates","for growing businesses. Packaged as","subscriptions or bundled projects."].map((item,index)=>
-              {return(
-                  <p className="overflow-hidden">
-                  <motion.span 
-                  initial={{ y:"100%"}}
-                  animate={{ y:0}}
-                  transition={{ease:Power4.easeInOut,duration:2 , delay:index*.2}}
-                  className="inline-block origin-left">
+            {[
+              "Premium quality creative at lean rates",
+              "for growing businesses. Packaged as",
+              "subscriptions or bundled projects.",
+            ].map((item, index) => {
+              return (
+                <p className="overflow-hidden">
+                  <motion.span
+                    initial={{ y: "100%" }}
+                    animate={{ y: 0 }}
+                    transition={{
+                      ease: Power4.easeInOut,
+                      duration: 2,
+                      delay: index * 0.2,
+                    }}
+                    className="inline-block origin-left"
+                  >
                     {item}
                   </motion.span>
                 </p>
-              ) })
-            }
+              );
+            })}
             {/* <p>for growing businesses. Packaged as</p> */}
           </div>
         </div>

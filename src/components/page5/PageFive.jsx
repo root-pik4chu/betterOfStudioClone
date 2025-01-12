@@ -1,4 +1,5 @@
 import React from "react";
+import { easeInOut, motion} from "framer-motion";
 
 const PageFive = () => {
   const data = [
@@ -35,12 +36,48 @@ const PageFive = () => {
           <div className="w-full sm:h-full ">
             <div className="w-full h-[10vh] "></div>
             <div className="one sm:text-[32vw] text-[30vw]">
-              <h1 className="text-center sm:mt-[-3vw]">CREATIVE</h1>
+              <h1 className="text-center sm:mt-[-3vw] ">
+
+              <p className="overflow-hidden">
+                      <motion.span
+                        initial={{ y: "100%" }}
+                        whileInView={{ y: 0 }}
+                        transition={{
+                          // ease: Power4.easeInOut,
+                          ease: easeInOut ,
+                          duration: 0.5,
+                          // delay: index * 0.2,
+                        }}
+                        viewport={{ once: true }}
+                        className="inline-block origin-left"
+                      >
+                        CREATIVE
+                      </motion.span>
+                    </p>
+              </h1>
             </div>
           </div>
           <div className="w-full sm:h-full  sm:mt-[-13vw] -mt-[7vw] pl-[5vw] sm:pl-[0]">
             <div className="one sm:w-full sm:h-full text-[30vw] flex items-center sm:p-[2.5vw]">
-              <h1 >WITH</h1>
+              <h1 >
+
+              <p className="overflow-hidden">
+                      <motion.span
+                        initial={{ y: "100%" }}
+                        whileInView={{ y: 0 }}
+                        transition={{
+                          // ease: Power4.easeInOut,
+                          ease: easeInOut ,
+                          duration: 0.5,
+                          // delay: index * 0.2,
+                        }}
+                        viewport={{ once: true }}
+                        className="inline-block origin-left"
+                      >
+                        WITH
+                      </motion.span>
+                    </p>
+              </h1>
               <div className="sm:w-[30%] sm:h-[50%] w-[30%] mt-[3vw]">
                 <img
                   className="object-cover w-full h-full"
@@ -53,7 +90,24 @@ const PageFive = () => {
 
           <div className="w-full sm:h-full sm:mt-[-15vw] -mt-[7vw] pl-[5vw] sm:pl-[0]">
             <div className="one w-full h-full sm:flex justify-end sm:p-[2.2vw] sm:text-[30vw] text-[30vw]">
-              <h1>NO FLUFF</h1>
+              <h1>
+              <p className="overflow-hidden">
+                      <motion.span
+                        initial={{ y: "100%" }}
+                        whileInView={{ y: 0 }}
+                        transition={{
+                          // ease: Power4.easeInOut,
+                          ease: easeInOut ,
+                          duration: 0.5,
+                          // delay: index * 0.2,
+                        }}
+                        viewport={{ once: true }}
+                        className="inline-block origin-left"
+                      >
+                        NO FLUFF
+                      </motion.span>
+                    </p>
+              </h1>
             </div>
           </div>
           

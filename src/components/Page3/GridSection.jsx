@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import React from "react";
 
 const GridSection = () => {
@@ -12,22 +13,59 @@ const GridSection = () => {
         </div>
         <div className="col-span-1 row-span-1  sm:w-70 sm:col-span-2 rounded-lg uppercase flex items-center justify-center text-[32vw] sm:text-[22.5vw] sm:leading-none font-[ff] bg-red-500">
       
-            <h1>Services</h1>
+          
+            <h1 className="overflow-hidden ">
+                      <motion.span
+                        initial={{ y: "100%" }}
+                        whileInView={{ y: 0 }}
+                        transition={{
+                          ease: Power4.easeInOut,
+                          // ease: easeInOut ,
+                          duration: 0.5,
+                          // delay: index * 0.2,
+                        }}
+                        className="inline-block"
+                      >
+                        Services
+                      </motion.span>
+                    </h1>
+                 
          
         </div>
         <div className="col-span-1 row-span-1  sm:row-span-1 sm:col-span-full rounded-lg bg-red-500">
           
           <div className="text-[8.9vw] sm:text-[3.5vw] font-medium leading-none text-zinc-800 ">
             <div className="">
-              <p>
-                <span>Superior brands require sophisticated</span>
+              {
+                ["Superior brands require sophisticated","capabilities that many businesses couldn't","access until now.itiiy" ].map((item, index) => {
+                  return (
+                    <p className="overflow-hidden">
+                      <motion.span
+                        initial={{ y: "100%" }}
+                        whileInView={{ y: 0 }}
+                        transition={{
+                          ease: Power4.easeInOut,
+                          duration: 2,
+                          delay: index * 0.2,
+                        }}
+                        className="inline-block origin-left"
+                      >
+                        {item}
+                      </motion.span>
+                    </p>
+                  );
+                })
+              }
+            
+            {/* <p>
+                <span></span>
               </p>
               <p>
                 <span>capabilities that many businesses couldn't</span>
               </p>
               <p>
                 <span>access until now.</span>
-              </p>
+              </p> */}
             </div>
           </div>
         </div>

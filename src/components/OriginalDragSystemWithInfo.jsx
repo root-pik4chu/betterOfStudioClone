@@ -51,12 +51,12 @@ const OriginalDragSystemWithInfo = () => {
     <div>
       <div className="w-full h-[120vh] ">
       <div className="w-full h-full grid grid-rows-[10vh,70vh,30vh] grid-cols-1 bg-zinc-900 text-white" >
-        <div className="w-full h-full">root</div>
+        <div className="w-full h-full"></div>
 
         <div className="grid-cols-2 w-[100%] sm:w-[70%] sm:ml-[30%] h-full">
           <div className="p-4  rounded-lg ">
             <p className="h-[40vh] text-[9vw] sm:text-[3.5vw] leading-none font-medium">
-              "We involve this team in
+              {/* "We involve this team in */}
               {selectedOption.info}
             </p>
           </div>

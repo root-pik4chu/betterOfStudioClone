@@ -17,40 +17,36 @@ const PageTwoPcView = () => {
     
 
 
-      //!----------------
-     
-      //!---------------- 
-
-        //!----------------
-      
-      //!---------------- 
-
-     useGSAP(function(){
+        useGSAP(function(){
      
 
-      const tl = gsap.timeline({
-         scrollTrigger:{
-            trigger:fullDiv.current,
-            start:"80% 100%",
-            end:"80% -20%",
-            scrub: 1,
-          
-           }
-      })
-      tl.to(ImgAnimate.current,{
-         y:"76vh",
-         x:"-2vw",
-         scale:"2.9",
-      },"a")
-      tl.to(wo.current,{
-         x:"15vw"
-      },"a")
-      tl.to(rk.current,{
-         x:"-15vw"
-      },"a")
+          const tl = gsap.timeline({
+             scrollTrigger:{
+                trigger:fullDiv.current,
+                start:"80% 100%",
+                end:"80% -20%",
+                scrub: true,
+                
+               }
+          })
+          tl.to(ImgAnimate.current,{
+             y:"76vh",
+             x:"-2vw",
+             scale:"2.9",
+          },"a")
+          tl.to(wo.current,{
+             x:"15vw"
+          },"a")
+          tl.to(rk.current,{
+             x:"-15vw"
+          },"a")
+    
+    
+         })
 
+     
 
-     })
+     
       // })
       
       // },[])

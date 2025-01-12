@@ -41,12 +41,12 @@ const Marquee = () => {
   // }, []);
 
   return (
-    <div className=" text-whitek   font-['ff']  leading-none -my-10 overflow-hidden" 
-    >
+    <div className=" text-whitek   font-['ff']  leading-none -my-10 overflow-hidden" >
       <motion.div 
       initial={{y:350}}
       animate={{y:0}}
-      transition={{duration:.9 , ease:[.5,0,.66,.12] }}
+      transition={{duration:.9 , 
+        ease:[.5,0,.66,.12] }}
       className=" flex">
 
       <motion.div

@@ -1,7 +1,194 @@
-Behind every surprising campaign, compelling site launch,
-                          or must-watch piece of content, there’s a well-considered
-                          strategy that engineered the outcome. During this crucial
-                          phase, we address the foundational and psychological
-                          factors that drive the desired interaction between brand
-                          and customer. We match logic-based journeys with pinpoint
-                          executions that create memorable and lasting engagements.
+// Behind every surprising campaign, compelling site launch,
+//                           or must-watch piece of content, there’s a well-considered
+//                           strategy that engineered the outcome. During this crucial
+//                           phase, we address the foundational and psychological
+//                           factors that drive the desired interaction between brand
+//                           and customer. We match logic-based journeys with pinpoint
+//                           executions that create memorable and lasting engagements.
+
+
+
+
+
+
+
+                          import React, { useState, useEffect } from 'react';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+  useNavigate,
+} from 'react-router-dom';
+
+// Mock JSON database
+const initialUsers = [
+  { id: 1, name: 'John Doe', email: 'john@example.com' },
+  { id: 2, name: 'Jane Doe', email: 'jane@example.com' },
+];
+
+// Admin Page
+function AdminPage() {
+  const [users, setUsers] = useState(initialUsers);
+
+  const deleteUser = (id) => {
+    setUsers(users.filter((user) => user.id !== id));
+  };
+
+  return (
+    <div className="p-6">
+      <h1 className="text-2xl font-bold mb-4">Admin Panel</h1>
+      <Link to="/register" className="bg-blue-500 text-white px-4 py-2 rounded mb-4 inline-block">
+        Register User
+      </Link>
+      <div className="overflow-x-auto">
+        <table className="table-auto w-full border-collapse border border-gray-300">
+          <thead>
+            <tr>
+              <th className="border border-gray-300 px-4 py-2">ID</th>
+              <th className="border border-gray-300 px-4 py-2">Name</th>
+              <th className="border border-gray-300 px-4 py-2">Email</th>
+              <th className="border border-gray-300 px-4 py-2">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {users.map((user) => (
+              <tr key={user.id}>
+                <td className="border border-gray-300 px-4 py-2">{user.id}</td>
+                <td className="border border-gray-300 px-4 py-2">{user.name}</td>
+                <td className="border border-gray-300 px-4 py-2">{user.email}</td>
+                <td className="border border-gray-300 px-4 py-2">
+                  <Link
+                    to={`/edit/${user.id}`}
+                    className="text-blue-500 hover:underline mr-2"
+                  >
+                    Edit
+                  </Link>
+                  <button
+                    onClick={() => deleteUser(user.id)}
+                    className="text-red-500 hover:underline"
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}
+
+// Registration Page
+function RegisterPage() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const navigate = useNavigate();
+
+  const registerUser = () => {
+    const newUser = { id: Date.now(), name, email };
+    initialUsers.push(newUser);
+    navigate('/');
+  };
+
+  return (
+    <div className="p-6">
+      <h1 className="text-2xl font-bold mb-4">Register User</h1>
+      <div className="mb-4">
+        <label className="block mb-2">Name</label>
+        <input
+          type="text"
+          className="border border-gray-300 px-4 py-2 w-full"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+      </div>
+      <div className="mb-4">
+        <label className="block mb-2">Email</label>
+        <input
+          type="email"
+          className="border border-gray-300 px-4 py-2 w-full"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+      </div>
+      <button
+        onClick={registerUser}
+        className="bg-green-500 text-white px-4 py-2 rounded"
+      >
+        Register
+      </button>
+    </div>
+  );
+}
+
+// Edit Page
+function EditPage({ id }) {
+  const [user, setUser] = useState(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const foundUser = initialUsers.find((u) => u.id === parseInt(id, 10));
+    if (foundUser) setUser(foundUser);
+  }, [id]);
+
+  const updateUser = () => {
+    if (user) {
+      const userIndex = initialUsers.findIndex((u) => u.id === user.id);
+      initialUsers[userIndex] = user;
+      navigate('/');
+    }
+  };
+
+  if (!user) return <div>User not found!</div>;
+
+  return (
+    <div className="p-6">
+      <h1 className="text-2xl font-bold mb-4">Edit User</h1>
+      <div className="mb-4">
+        <label className="block mb-2">Name</label>
+        <input
+          type="text"
+          className="border border-gray-300 px-4 py-2 w-full"
+          value={user.name}
+          onChange={(e) => setUser({ ...user, name: e.target.value })}
+        />
+      </div>
+      <div className="mb-4">
+        <label className="block mb-2">Email</label>
+        <input
+          type="email"
+          className="border border-gray-300 px-4 py-2 w-full"
+          value={user.email}
+          onChange={(e) => setUser({ ...user, email: e.target.value })}
+        />
+      </div>
+      <button
+        onClick={updateUser}
+        className="bg-blue-500 text-white px-4 py-2 rounded"
+      >
+        Update
+      </button>
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <div className="min-h-screen bg-gray-100">
+        <Routes>
+          <Route path="/" element={<AdminPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route
+            path="/edit/:id"
+            element={<EditPage id={window.location.pathname.split('/').pop()} />}
+          />
+        </Routes>
+      </div>
+    </Router>
+  );
+}
+
+export default App;

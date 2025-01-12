@@ -9,11 +9,17 @@ import PageThree from "./components/Page3/PageThree";
 import OriginalDragSystemWithInfo from "./components/OriginalDragSystemWithInfo";
 import Page4Image from "./components/Page4Image";
 import PageFiveWrapper from "./components/page5/PageFiveWrapper";
+import GradientTextAnimation from "./components/loader/GradientTextAnimation ";
+import LocomotiveScrollWrapper from "./LocomotiveScrollWrapper";
+import PageSixWrapper from "./components/page6/PageSixWrapper";
+import SwitchDivisions from "./components/page6/ButtonWithAnimations";
 
 
 
 function App() {
-  const locomotiveScroll = new LocomotiveScroll();
+  const locomotiveScroll = new LocomotiveScroll({
+    
+  });
   const [count, setCount] = useState(0);
 
   const accordionItems = [
@@ -24,16 +30,31 @@ function App() {
   return (
     <>
       <div className="font-['pp']">
-        <PageOne />
 
-        <PageTwo />
-        <PageThree />
-       
-        <OriginalDragSystemWithInfo />
+        {/* <GradientTextAnimation /> */}
+
+        {/* <LocomotiveScrollWrapper> */}
+
+          <PageOne />
+
+          <PageTwo />
+          <PageThree />
+
+          <OriginalDragSystemWithInfo />
+
+          <Page4Image /> 
+          <PageFiveWrapper />
+
+
+          <PageSixWrapper />
+          
+          
+        {/* </LocomotiveScrollWrapper> */}
         
-        <Page4Image /> 
-        <PageFiveWrapper />
         
+
+
+
        
         {/* something */}
         

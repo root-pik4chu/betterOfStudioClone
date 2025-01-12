@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { PiPlusBold } from "react-icons/pi";
-import { motion } from "framer-motion";
+import { easeInOut, motion } from "framer-motion";
 
 const NayaWalaPageThree = ({ items }) => {
   const [activeIndex, setActiveIndex] = useState(items[0]);
@@ -17,13 +17,48 @@ const NayaWalaPageThree = ({ items }) => {
         </div>
         <div className="col-span-8 sm:col-span-12 sm:text-[32vw] text-[30vw] leading-none font-[ff] mt-[10vw] sm:mt-[0]  sm:order-3">
           <div className=" uppercase">
-            <h1 className="text-center">Services</h1>
+            <h1 className="text-center overflow-hidden"> 
+                      <motion.span
+                        initial={{ y: "100%" }}
+                        whileInView={{ y: 0 }}
+                        transition={{
+                          // ease: Power4.easeInOut,
+                          ease: easeInOut ,
+                          duration: 0.5,
+                          // delay: index * 0.2,
+                        }}
+                        className="inline-block origin-left"
+                      >
+                        SERVICES
+                      </motion.span>
+                    </h1>
           </div>
         </div>
-        <div className="col-span-8 text-[9.5vw] sm:text-[3.5vw] sm:col-span-10 leading-none mt-[10vw] sm:mt-0 sm:order-2 sm:col-start-5 ">
-          <div className="">Superior brands require sophisticated</div>
+        <div className="col-span-8 text-[9.5vw] sm:text-[3.3vw] sm:col-span-10 leading-none mt-[10vw] sm:mt-0 sm:order-2 sm:col-start-5 ">
+          {/* <div className="">Superior brands require sophisticated</div>
           <div className="">capabilities that many businesses couldn't</div>
-          <div className="">access until now.</div>
+          <div className="">access until now.</div> */}
+
+          {
+            ["Superior brands require sophisticated","capabilities that many businesses couldn't","access until now."].map((item, index)=>{
+              return(
+                <p className="overflow-hidden">
+                  <motion.span
+                  initial={{y:"100%"}}
+                  whileInView={{y:0}}
+                  transition={{duration:1 , delay: index * 0.2,}}
+                  viewport={{once:true}}
+                  className="inline-block"
+                >
+                  {item}
+  
+                </motion.span>
+                </p>
+              )
+  
+            })
+          }
+
         </div>
         <div className="col-span-8 sm:col-span-7 sm:col-start-5 mt-[10vw] sm:mt-[5vw] sm:order-4">
           <div className="h-auto">
