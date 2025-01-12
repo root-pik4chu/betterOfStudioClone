@@ -19,7 +19,7 @@ const PageSix = () => {
 
   return (
     <div>
-      <div className="w-full sm:h-auto  relative" >
+      <div className="w-full h-auto  relative" >
         <div className="w-full  sm:h-[10vh]  pt-5 sm:px-10 px-5">
           <div className=" sm:h-full grid grid-cols-1 grid-rows-3 sm:grid-cols-12 items-center text-2xl sm:text-[1.3vw]">
             <h1 className='sm:col-start-1 items-center '>● PLANS</h1>

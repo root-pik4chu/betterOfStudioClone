@@ -27,6 +27,7 @@ const SubscriptionCardsDiv = () => {
         <Card />
         <Card />
         
+        
 
       </motion.div>
       </AnimatePresence>
