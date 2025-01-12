@@ -33,7 +33,7 @@ function App() {
 
         {/* <GradientTextAnimation /> */}
 
-        {/* <LocomotiveScrollWrapper> */}
+        <LocomotiveScrollWrapper>
 
           <PageOne />
 
@@ -49,7 +49,7 @@ function App() {
           <PageSixWrapper />
           
           
-        {/* </LocomotiveScrollWrapper> */}
+        </LocomotiveScrollWrapper>
         
         
 
