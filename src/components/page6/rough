@@ -23,7 +23,7 @@ const SwitchDivisions = ({trueOrFalse}) => {
   return (
     
     <>
-      <div className="sm:w-[20vw] text-2xl sm:text-[1.4vw] h-[10vh] sm:mt-20 flex items-center gap-3 justify-star ">
+      <div className="sm:w-[20vw] text-xl sm:text-[1.4vw] h-[10vh] sm:mt-20 flex items-center gap-3 justify-star ">
         <h1>Subscription</h1>
 
         <div className="relative sm:w-20">
