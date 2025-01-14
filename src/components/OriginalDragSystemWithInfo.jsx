@@ -8,48 +8,53 @@ const options = [
     photo:
       "https://www.datocms-assets.com/106915/1717982440-relevant-compliance_logo.png?auto=format%2Ccompress&fit=max&h=500&w=500",
     description: "This is the description for Option A.",
-    info: "Referred by a friend, we appreciated this team's clear pricing and flexible staffing for our major site launches, including Shopify development. They're now our go-to team in a pinch.",
+    info: ["Referred by a friend, we appreciated this"," team's clear pricing and flexible staffing" ,"for our major site launches, including Shopify"," development. They're now our go-to team in"," a pinch."]
   },
   {
     name: "Option B",
     photo:
       "https://www.datocms-assets.com/106915/1717982764-hoco_logo.png?auto=format%2Ccompress&fit=max&h=500&w=500",
     description: "This is the description for Option B.",
-    info: "This team excelled under pressure, delivering a standout UX/UI update to our booking section that redefined our collaboration and became a highlight for Royal Caribbean.",
+    info: ["This team excelled under pressure,"," delivering a standout UX/UI update to our", "booking section that redefined our", "collaboration and became a highlight for"," Royal Caribbean."],
   },
   {
     name: "Option C",
     photo:
       "https://www.datocms-assets.com/106915/1717982464-royal-caribbean_logo.png?auto=format%2Ccompress&fit=max&h=500&w=500",
     description: "This is the description for Option C.",
-    info: "We've partnered with Better Off for years, and are always impressed by their innovative brand development and precise execution. Their work during our recent rebrand matched our vision perfectly.",
+    info: ["We've partnered with Better Off for years,"," and are always impressed by their innovative"," brand development and precise execution." ,"Their work during our recent rebrand"," matched our vision perfectly."],
   },
   {
     name: "Option D",
     photo:
       "https://www.datocms-assets.com/106915/1717858815-built_logo.png?auto=format%2Ccompress&fit=max&h=500&w=500",
     description: "This is the description for Option D.",
-    info: "We have a long history with this company  and several major projects together. Their expertise consistently makes us look good.",
+    info: ["We have a long history with this company",  "and several major projects together." ,"Their expertise consistently makes us"," look good."]
   },
   {
     name: "Option E",
     photo:
       "https://www.datocms-assets.com/106915/1717983726-spacecraft_logo.png?auto=format%2Ccompress&fit=max&h=500&w=500",
     description: "This is the description for Option E.",
-    info: " We involve this team in every new product. They excel at their work and care about every detail, making each project special and unique.",
+    info: ["We involve this team in every new product.", 
+      "They excel at their work and care about",
+      "every detail, making each project"," special and unique."]
   },
 ];
 
 const OriginalDragSystemWithInfo = () => {
   const [selectedOption, setSelectedOption] = useState(options[0]); // Default to the first option
 
+  const [click , setClick] = useState(true)
   const handleClick = (option) => {
     setSelectedOption(option); // Update selected option on click
   };
 
 
+  // ! options  array - make the words seperate
+  // const textArray  = options[0].info.split(" ").filter((text)=>text);
+  // console.log(textArray );
   
-
   return (
     <div>
       <div className="w-full h-[120vh] ">
@@ -58,9 +63,26 @@ const OriginalDragSystemWithInfo = () => {
 
         <div className="grid-cols-2 w-[100%] sm:w-[70%] sm:ml-[30%] h-full">
           <div className="p-4  rounded-lg ">
-            <p className="h-[40vh] text-[9vw] sm:text-[3.5vw] leading-none font-medium">
-              {/* "We involve this team in */}
-              {selectedOption.info}
+            <p
+              // !before motion we have to make change in arrray or to make the word seperate.. then we'll see kaise jayegaa yo
+
+            className="h-[40vh] text-[9vw] sm:text-[3.5vw] leading-none font-medium overflow-hidden">
+              
+              {selectedOption.info.map((item , index)=>{
+                const i = 100*index;
+                // style={{backgroundColor: `rgb(${i} , 100 ,0 ,1)`}}
+                return <p className="overflow-hidden">
+                  <motion.span
+                  key={`${item} - ${click}`}
+                    initial={{y:"100%"}}
+                    animate= { {y:0} }
+                    transition={{duration:1.2 , ease:"easeInOut"}}                    
+                  className="inline-block ">{item}</motion.span>
+                </p>
+              })}
+
+          
+             
             </p>
           </div>
           <div className="w-full mt-[20vw] sm:mt-[0] h-[15%] sm:h-[20%]   flex items-center justify-center gap-[5vw] sm:gap-[0vw] ">
@@ -89,8 +111,12 @@ const OriginalDragSystemWithInfo = () => {
             {options.map((option, index) => (
               <div
                 key={index}
-                className="min-w-[50vw] sm:min-w-[10%] border border-opacity-25 border-zinc-100 box-border flex justify-center items-center"
-                onClick={() => handleClick(option)}
+                className="min-w-[50vw] sm:min-w-[10%] border border-opacity-25 border-zinc-100 hover:bg-lime-500 transition duration-500 box-border flex justify-center items-center"
+                onClick={() => 
+                  {
+                    handleClick(option)
+                    setClick(!click)
+                  }}
               >
                
                 <img
