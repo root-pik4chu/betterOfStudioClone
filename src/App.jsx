@@ -13,6 +13,8 @@ import GradientTextAnimation from "./components/loader/GradientTextAnimation ";
 import LocomotiveScrollWrapper from "./LocomotiveScrollWrapper";
 import PageSixWrapper from "./components/page6/PageSixWrapper";
 import SwitchDivisions from "./components/page6/ButtonWithAnimations";
+import Page7 from "./components/page7/Page7";
+import Page8 from "./components/Page8/Page8";
 
 
 
@@ -47,7 +49,11 @@ function App() {
 
           <PageSixWrapper />
           
-          
+          <Page7 />
+
+          <Page8 />
+          <Page8 />
+
         </LocomotiveScrollWrapper>
         
         

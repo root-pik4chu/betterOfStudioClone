@@ -25,7 +25,7 @@ const PageSix = () => {
             <h1 className='sm:col-start-1 items-center '>● PLANS</h1>
             <h1 className='sm:col-start-6 items-center '>(BO® — 06)</h1>
             <h1 className='sm:col-start-11 col-span-2 items-center '>ADD-TO-CART CREATIVE</h1>
-            <h1></h1>
+            
           </div>
         </div>
         

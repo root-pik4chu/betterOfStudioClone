@@ -47,6 +47,9 @@ const OriginalDragSystemWithInfo = () => {
     setSelectedOption(option); // Update selected option on click
   };
 
+
+  
+
   return (
     <div>
       <div className="w-full h-[120vh] ">
