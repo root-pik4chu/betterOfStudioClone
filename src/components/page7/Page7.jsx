@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const Page7 = () => {
   return (
     <>
-      <div className="w-full h-[105vh] bg-zinc-200 overflow-hidden ">
+      <div className="w-full h-[120vh] bg-zinc-200 overflow-hidden ">
         <div className="w-full  sm:h-[5vh]  pt-5 sm:px-10 px-5">
           <div className=" sm:h-full grid grid-cols-1 grid-rows-3 sm:grid-cols-12 items-center text-2xl sm:text-[1.3vw]">
             <h1 className="sm:col-start-1 col-span-2 items-center uppercase">
@@ -34,7 +34,7 @@ const Page7 = () => {
           className="text1 w-full h-[28vw]  overflow-hidden" >
             <motion.div 
             initial={{y:"80%"}}
-            viewport={{once:true}}
+            viewport={{once:true , amount:0.1}}
             // viewport={{  amount: 0.5 }}
             // animate={{y:0}}
             whileInView={{once: true, y:0}}

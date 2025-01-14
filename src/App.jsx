@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState ,useEffect} from "react";
 
 import "./App.css";
 
@@ -22,14 +22,31 @@ function App() {
   const locomotiveScroll = new LocomotiveScroll({
     
   });
-  const [count, setCount] = useState(0);
+ 
 
-  const accordionItems = [
-    { title: "What is React?", content: "React is a JavaScript library for building user interfaces." },
-    { title: "What is Framer Motion?", content: "Framer Motion is a production-ready animation library for React." },
-    { title: "Why use Tailwind CSS?", content: "Tailwind CSS allows for utility-first styling, speeding up development." },
-  ];
+
+  useEffect(() => {
+
+    const locomotiveScroll = new LocomotiveScroll({
+      el: document.querySelector("[data-scroll-container]"), // Specify the scroll container
+      smooth: true,
+      lerp: 0.4, 
+      multiplier: 1, 
+      direction: "vertical", 
+    });
+
+    // Cleanup on component unmount
+    return () => {
+      locomotiveScroll.destroy();
+    };
+
+
+    window.scrollTo(0, 0);
+  }, []);
+  
+
   return (
+
     <>
       <div className="font-['pp']">
 
