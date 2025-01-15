@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html::-webkit-scrollbar {
+   display: none;  /* For Chrome, Safari, and Opera */
+ }
+
 @font-face {
    font-family: pp;
    src: url(./font/PPNeueMontreal-Medium.88ee7c9.otf),

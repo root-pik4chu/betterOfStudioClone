@@ -1,6 +1,11 @@
+
+
 import React from "react";
 
+
 const NavBar = () => {
+  
+
   return (
     <div className="w-full h-[12vh] flex items-center justify-between p-4 -my-2 text-white font-['pp']">
       <div className="logo w-1/2 sm:w-[33.33%] ">
@@ -11,17 +16,17 @@ const NavBar = () => {
         />
       </div>
 
-      <div className="anotherItem flex gap-6 text-xl sm:hidden">
+      <div className="anotherItem flex gap-6 text-xl sm:hidden ">
         <p className="font-normal">Pricing</p>
         <p  className="font-normal">menu</p>
       </div>
 
 
-      <div className="desktopIcons hidden sm:flex sm:items-center  w-[66.66%] h-full ">
-        <div className="fist_three_item h-full w-1/2  flex items-center justify-center gap-10">
+      <div  className=" desktopIcons hidden sm:flex sm:items-center  w-[66.66%] h-full ">
+        <div className="fist_three_item h-fit w-1/2  flex items-center justify-center gap-10 overflow-hidden">
           {
             ["Overview", "Work", "Feed"].map((item, index) => (
-              <h1 key={index} className="text-xl font-normal  ">{item}</h1>
+              <h1 key={index}  className=" text-xl font-normal  ">{item}</h1>
             ))
           
           }

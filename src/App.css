@@ -1,0 +1,32 @@
+/* Rotating Box Animation */
+@keyframes rotate-box {
+   0% {
+     transform: translateX(100vw) rotate(0deg);
+   }
+   50% {
+     transform: translateX(50vw) rotate(360deg);
+   }
+   100% {
+     transform: translateX(-100vw) rotate(720deg);
+   }
+ }
+ 
+ .rotating-box {
+   position: absolute;
+   animation: rotate-box 2.5s cubic-bezier(0.4, 0.0, 0.2, 1) forwards;
+ }
+ 
+ /* Progress Bar Animation */
+ @keyframes load-bar {
+   0% {
+     width: 0;
+   }
+   100% {
+     width: 100%;
+   }
+ }
+ 
+ .progress-bar {
+   animation: load-bar 3s cubic-bezier(0.4, 0.0, 0.2, 1) forwards;
+ }
+ 
